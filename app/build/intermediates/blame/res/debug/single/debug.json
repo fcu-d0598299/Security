@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_map_04_room2.png.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\map_04_room2.png"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\layout_ui_main.xml.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\layout\\ui_main.xml"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_background.jpg.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\background.jpg"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_text_3.xml.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\layout\\item_text_3.xml"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_map_05_room3.png.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\map_05_room3.png"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_background_2.jpg.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\background_2.jpg"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_map_01_lobby.png.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\map_01_lobby.png"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\layout_ui_beacon_data.xml.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\layout\\ui_beacon_data.xml"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_map_03_room1.png.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\map_03_room1.png"
+    },
+    {
+        "merged": "F:\\Documents\\GitHub\\Security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_map_02_office_all.png.flat",
+        "source": "F:\\Documents\\GitHub\\Security\\app\\src\\main\\res\\drawable-xxhdpi\\map_02_office_all.png"
+    }
+]

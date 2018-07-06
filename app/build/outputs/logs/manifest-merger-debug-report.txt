@@ -1,0 +1,107 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:1-42:12
+	package
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:5-44
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:5-44
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:5-44
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:5-44
+INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:5-44
+	android:targetSdkVersion
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:5-44
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:7:15-41
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:9:5-74
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:9:22-71
+uses-permission#android.permission.BLUETOOTH
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:10:2-65
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:10:19-62
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:11:2-76
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:11:19-73
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:12:2-73
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:12:19-70
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:13:2-73
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:13:19-70
+uses-permission#android.permission.INTERNET
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:14:2-64
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:14:19-61
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:15:2-78
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:15:19-75
+uses-feature#android.hardware.bluetooth_le
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:17:2-86
+	android:required
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:17:61-84
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:17:16-60
+application
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:19:5-40:19
+	android:label
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:22:9-41
+	android:icon
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:21:9-45
+	android:allowBackup
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:20:9-35
+	android:theme
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:23:9-40
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:24:9-58
+activity#com.THLight.USBeacon.Sample.ui.UIMain
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:26:9-36:20
+	android:screenOrientation
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:29:13-49
+	android:label
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:28:13-45
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:27:13-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:31:13-35:29
+action#android.intent.action.MAIN
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:32:17-69
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:32:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:34:17-77
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:34:27-74
+activity#com.THLight.USBeacon.Sample.ui.UIBeaconData
+ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:38:9-117
+	android:screenOrientation
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:38:78-114
+	android:name
+		ADDED from F:\Documents\GitHub\Security\app\src\main\AndroidManifest.xml:38:19-77
