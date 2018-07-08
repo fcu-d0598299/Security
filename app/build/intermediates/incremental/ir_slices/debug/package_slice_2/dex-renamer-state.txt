@@ -1,4 +1,4 @@
-#Fri Jul 06 16:32:16 CST 2018
-base.0=C\:\\Users\\Dai\\Desktop\\USBeaconSample\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
+#Sun Jul 08 19:55:52 GMT+08:00 2018
+base.0=D\:\\Program Files\\AndroidStudioProjects\\Security\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
 path.0=classes.dex
 renamed.0=classes.dex

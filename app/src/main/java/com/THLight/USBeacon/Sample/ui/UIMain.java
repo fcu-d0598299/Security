@@ -88,16 +88,16 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			switch(msg.what)
 			{
 				case MSG_SCAN_IBEACON:
-					{
-						int timeForScaning		= msg.arg1;
-						int nextTimeStartScan	= msg.arg2;
-						
-						miScaner.startScaniBeacon(timeForScaning);   //Start scan iBeacon
-						this.sendMessageDelayed(Message.obtain(msg), nextTimeStartScan);
-					}
-					break;
+				{
+					int timeForScaning		= msg.arg1;
+					int nextTimeStartScan	= msg.arg2;
 
-                // Update the beacon list on the phone screen.
+					miScaner.startScaniBeacon(timeForScaning);   //Start scan iBeacon
+					this.sendMessageDelayed(Message.obtain(msg), nextTimeStartScan);
+				}
+				break;
+
+				// Update the beacon list on the phone screen.
 				case MSG_UPDATE_BEACON_LIST:
 					synchronized(mListAdapter)
 					{
@@ -106,61 +106,61 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 						mHandler.sendEmptyMessageDelayed(MSG_UPDATE_BEACON_LIST, 500);
 					}
 					break;
-				
+
 				case MSG_SERVER_RESPONSE:
 					switch(msg.arg1)
 					{
 						case USBeaconConnection.MSG_NETWORK_NOT_AVAILABLE:
 							break;
 
-                        // Get the data from Server by the "QUERY_UUID"
+						// Get the data from Server by the "QUERY_UUID"
 						case USBeaconConnection.MSG_HAS_UPDATE:
-						    //Download beacon data to a zip file, and send MSG_DATA_UPDATE_FINISHED
+							//Download beacon data to a zip file, and send MSG_DATA_UPDATE_FINISHED
 							mBServer.downloadBeaconListFile();
 							Toast.makeText(UIMain.this, "HAS_UPDATE.", Toast.LENGTH_SHORT).show();
 							break;
-							
+
 						case USBeaconConnection.MSG_HAS_NO_UPDATE:
 							Toast.makeText(UIMain.this, "No new BeaconList.", Toast.LENGTH_SHORT).show();
 							break;
-							
+
 						case USBeaconConnection.MSG_DOWNLOAD_FINISHED:
 							break;
-		
+
 						case USBeaconConnection.MSG_DOWNLOAD_FAILED:
 							Toast.makeText(UIMain.this, "Download file failed!", Toast.LENGTH_SHORT).show();
 							break;
-							
+
 						case USBeaconConnection.MSG_DATA_UPDATE_FINISHED:
+						{
+							USBeaconList BList= mBServer.getUSBeaconList();  //Get the beacon list that was from Server
+
+							if(null == BList)
 							{
-								USBeaconList BList= mBServer.getUSBeaconList();  //Get the beacon list that was from Server
-
-								if(null == BList)
-								{
-									Toast.makeText(UIMain.this, "Data Updated failed.", Toast.LENGTH_SHORT).show();
-									THLLog.d("debug", "update failed.");
-								}
-								else if(BList.getList().isEmpty())
-								{
-									Toast.makeText(UIMain.this, "Data Updated but empty.", Toast.LENGTH_SHORT).show();
-									THLLog.d("debug", "this account doesn't contain any devices.");
-								}
-								else
-								{
-								    String BeaconData = "";
-									Toast.makeText(UIMain.this, "Data Updated("+ BList.getList().size()+ ")", Toast.LENGTH_SHORT).show();
-									
-									for(USBeaconData data : BList.getList())
-									{
-									    BeaconData = BeaconData + "Name("+ data.name+ "), Ver("+ data.major+ "."+ data.minor+ ")\n";
-										THLLog.d("debug", "Name("+ data.name+ "), Ver("+ data.major+ "."+ data.minor+ ")");
-									}
-
-                                    showBeaconFromServerOnDialog(BeaconData);
-								}
+								Toast.makeText(UIMain.this, "Data Updated failed.", Toast.LENGTH_SHORT).show();
+								THLLog.d("debug", "update failed.");
 							}
-							break;
-							
+							else if(BList.getList().isEmpty())
+							{
+								Toast.makeText(UIMain.this, "Data Updated but empty.", Toast.LENGTH_SHORT).show();
+								THLLog.d("debug", "this account doesn't contain any devices.");
+							}
+							else
+							{
+								String BeaconData = "";
+								Toast.makeText(UIMain.this, "Data Updated("+ BList.getList().size()+ ")", Toast.LENGTH_SHORT).show();
+
+								for(USBeaconData data : BList.getList())
+								{
+									BeaconData = BeaconData + "Name("+ data.name+ "), Ver("+ data.major+ "."+ data.minor+ ")\n";
+									THLLog.d("debug", "Name("+ data.name+ "), Ver("+ data.major+ "."+ data.minor+ ")");
+								}
+
+								showBeaconFromServerOnDialog(BeaconData);
+							}
+						}
+						break;
+
 						case USBeaconConnection.MSG_DATA_UPDATE_FAILED:
 							Toast.makeText(UIMain.this, "UPDATE_FAILED!", Toast.LENGTH_SHORT).show();
 							break;
@@ -169,7 +169,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			}
 		}
 	};
-	
+
 	/** ================================================ */
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -207,7 +207,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		{
 			if(!file.mkdirs())
 			{
-				Toast.makeText(this, "Create folder("+ STORE_PATH+ ") failed.", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "Create folder("+ STORE_PATH+ ") failed.", Toast.LENGTH_SHORT).show();//////////////////////////////////////////////////////////////////////////////////
 			}
 		}
 		
@@ -309,6 +309,10 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		{
 			addOrUpdateiBeacon(iBeacon);
 		}
+
+		Toast.makeText(UIMain.this,"掃描中...",Toast.LENGTH_SHORT).show();
+
+
 	}
 	/** ================================================ */
     /** implementation of {@link iBeaconScanManager#OniBeaconScan } */
@@ -334,7 +338,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		mHandler.obtainMessage(MSG_SERVER_RESPONSE, msg, 0).sendToTarget();
 	}
 
-    public void showBeaconFromServerOnDialog(String sBeaconDate)
+    public void showBeaconFromServerOnDialog(String sBeaconDate)//後台伺服器的連線
     {
         final AlertDialog dlg = new AlertDialog.Builder(UIMain.this).create();
 
@@ -349,13 +353,14 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
             }
         });
 
-        dlg.show();
+        //dlg.show();
     }
 	/** ========================================================== */
-	public void dlgNetworkNotAvailable()
+
+	public void dlgNetworkNotAvailable()//檢查是否有網路
 	{
 		final AlertDialog dlg = new AlertDialog.Builder(UIMain.this).create();
-		
+
 		dlg.setTitle("Network");
 		dlg.setMessage("Please enable your network for updating beacon list.");
 
@@ -366,10 +371,9 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 				dlg.dismiss();
 			}
 		});
-		
-		dlg.show();
+
+		//dlg.show();
 	}
-	
 	/** ========================================================== */
 	public void dlgNetworkMobile()
 	{

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "162296578236",
+    "firebase_url": "https://beacon-802cb.firebaseio.com",
+    "project_id": "beacon-802cb",
+    "storage_bucket": "beacon-802cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162296578236:android:5ecd1398d8b42ccc",
+        "android_client_info": {
+          "package_name": "com.THLight.USBeacon.Sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162296578236-fva9nkn6kdrfag6229p18t2qdtehpb0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.THLight.USBeacon.Sample",
+            "certificate_hash": "4005c26c9c77c75b5701819a93215f443c21a576"
+          }
+        },
+        {
+          "client_id": "162296578236-o2s2k8osv6tiskpnmf9d0vvknu0n7549.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVZS84TBW_WMwehXl2QzMTrHmufBRZl6M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162296578236-o2s2k8osv6tiskpnmf9d0vvknu0n7549.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
