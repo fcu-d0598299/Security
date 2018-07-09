@@ -59,7 +59,9 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	final int MSG_SERVER_RESPONSE		= 3000;
 	
 	final int TIME_BEACON_TIMEOUT		= 30000;
-	
+
+	static String distance;
+
 	THLApp App		= null;
 	THLConfig Config= null;
 	
@@ -312,6 +314,14 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 
 		Toast.makeText(UIMain.this,"掃描中...",Toast.LENGTH_SHORT).show();
 
+		if(distance!="dangerous" && Math.abs(iBeacon.rssi)<=5)
+		{
+			distance="dangerous";
+
+			Intent intent = new Intent();
+			intent.setClass(UIMain.this,distanceclass.class);
+			startActivity(intent);
+		}
 
 	}
 	/** ================================================ */
