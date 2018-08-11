@@ -7,12 +7,11 @@ import com.THLight.USBeacon.App.Lib.iBeaconData;
 public class ScanediBeacon extends iBeaconData
 {
 	public long lastUpdate= 0;
-	
+
 	/** ================================================ */
 	public static ScanediBeacon copyOf(iBeaconData iBeacon)
 	{
 		ScanediBeacon newBeacon	= new ScanediBeacon();
-		
 		newBeacon.beaconUuid	= iBeacon.beaconUuid;
 		newBeacon.major			= iBeacon.major;
 		newBeacon.minor			= iBeacon.minor;
@@ -28,7 +27,6 @@ public class ScanediBeacon extends iBeaconData
 	public static ScanediBeacon copyOf(ScanediBeacon scanBeacon)
 	{
 		ScanediBeacon newBeacon	= new ScanediBeacon();
-		
 		newBeacon.beaconUuid	= scanBeacon.beaconUuid;
 		newBeacon.major			= scanBeacon.major;
 		newBeacon.minor			= scanBeacon.minor;

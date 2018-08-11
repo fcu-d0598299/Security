@@ -303,7 +303,6 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
   	}
 
     /** ================================================ */
-    /** implementation of {@link iBeaconScanManager#OniBeaconScan } */
 	@Override
 	public void onScaned(iBeaconData iBeacon)
 	{
@@ -325,7 +324,6 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 
 	}
 	/** ================================================ */
-    /** implementation of {@link iBeaconScanManager#OniBeaconScan } */
 	@Override
 	public void onBatteryPowerScaned(BatteryPowerData batteryPowerData) {
 		// TODO Auto-generated method stub
@@ -477,7 +475,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			//Add beacon to the list that it could show on the screen.
 			for(ScanediBeacon beacon : miBeacons)
 			{
-				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.batteryPower, beacon.macAddress));
+				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.batteryPower, ""+beacon.oneMeterRssi, beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
 			}
 		}
 	}
@@ -498,20 +496,21 @@ class ListItem
 	public String text3= "";
 	public String text4= "";
 	public String text5= "";
+	public String text6= "";
 	String tV_mac = null;
+	public String text7= "";
+
 	
-	public ListItem()
-	{
-	}
-	
-	public ListItem(String text1, String text2, String text3, String text4, String text5, String tV_mac)
+	public ListItem(String text1, String text2, String text3, String text4, String text5, String text6 ,String tV_mac,String text7)
 	{
 		this.text1= text1;
 		this.text2= text2;
 		this.text3= text3;
 		this.text4= text4;
 		this.text5= text5;
+		this.text6= text6;
 		this.tV_mac = tV_mac;
+		this.text7= text7;
 	}
 }
 
@@ -570,7 +569,9 @@ class BLEListAdapter extends BaseAdapter
 		    TextView text3	= (TextView)view.findViewById(R.id.it3_text3);
 		    TextView text4	= (TextView)view.findViewById(R.id.it3_text4);
 		    TextView text5	= (TextView)view.findViewById(R.id.it3_text5);
+			TextView text6	= (TextView)view.findViewById(R.id.it3_text6);
             TextView tV_Mac	= (TextView)view.findViewById(R.id.tV_mac);
+			TextView text7	= (TextView)view.findViewById(R.id.it3_text7);
 
 	    	ListItem item= (ListItem)mListItems.toArray()[position];
 
@@ -579,7 +580,9 @@ class BLEListAdapter extends BaseAdapter
 			text3.setText(item.text3);
 			text4.setText(item.text4+ " dbm");
 			text5.setText(item.text5+ " V");
+			text6.setText(item.text6+ "dbm");
 			tV_Mac.setText(item.tV_mac);
+			text7.setText(item.text7+ "m");
 		}
 	    else
 	    {

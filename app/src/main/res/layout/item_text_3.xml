@@ -120,30 +120,71 @@
 	        android:singleLine="true"
 	        android:textColor="#CCFFFFFF"
 	    />
-	    
-	    <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:gravity="left|center_vertical"
-	        android:singleLine="true"
-	        android:textColor="#CCFFFFFF"
-	        android:paddingLeft="2dp"
-	        android:text="battery power : "
-	    />
-	    
-	    <TextView
-	        android:id="@+id/it3_text5"
-	        android:layout_weight="220"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:gravity="center"
-	        android:singleLine="true"
-	        android:textColor="#CCFFFFFF"
-	    />
-	    
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="left|center_vertical"
+			android:singleLine="true"
+			android:textColor="#CCFFFFFF"
+			android:paddingLeft="2dp"
+			android:text="onemeterRssi : "
+			/>
+		<TextView
+			android:id="@+id/it3_text6"
+			android:layout_weight="220"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:singleLine="true"
+			android:textColor="#CCFFFFFF"
+			/>
+
 	</LinearLayout>
-	
-    <Space android:layout_width="match_parent" android:layout_height="5dp" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="left|center_vertical"
+			android:paddingLeft="2dp"
+			android:singleLine="true"
+			android:text="battery power : "
+			android:textColor="#CCFFFFFF" />
+
+		<TextView
+			android:id="@+id/it3_text5"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:singleLine="true"
+			android:textColor="#CCFFFFFF" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:paddingLeft="2dp"
+			android:singleLine="true"
+			android:text="distance : "
+			android:textColor="#CCFFFFFF" />
+		<TextView
+			android:id="@+id/it3_text7"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:singleLine="true"
+			android:textColor="#CCFFFFFF" />
+	</LinearLayout>
+
+	<Space android:layout_width="match_parent" android:layout_height="5dp" />
 
 </LinearLayout>
 
