@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\USER\\AndroidStudioProjects\\Security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "E:\\project\\sec\\Security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\b5d56caa8ec477e75b2b5c2d265b4709\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Zhuang\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\e8d48bc2394df5dbd07b57163f1fb7d1\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\0eeac0a5c87ea22cb43bb6dac607da86\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Zhuang\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\a86a09e54b679ab3f7c882b7ceb9fd99\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

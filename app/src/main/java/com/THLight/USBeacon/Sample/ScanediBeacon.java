@@ -19,7 +19,6 @@ public class ScanediBeacon extends iBeaconData
 		newBeacon.rssi			= iBeacon.rssi;
 		newBeacon.lastUpdate	= 0;
 		newBeacon.macAddress    = iBeacon.macAddress;
-		
 		return newBeacon;
 	}
 	
