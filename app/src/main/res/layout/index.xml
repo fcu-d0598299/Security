@@ -1,9 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1920">
+
+    <Button
+        android:id="@+id/supervise"
+        android:layout_width="105dp"
+        android:layout_height="83dp"
+        android:text="監控介面"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="108dp" />
 
     <Button
         android:id="@+id/botton56"
@@ -12,14 +20,6 @@
         android:text="Button"
         tools:layout_editor_absoluteX="220dp"
         tools:layout_editor_absoluteY="260dp" />
-
-    <Button
-        android:id="@+id/supervise"
-        android:layout_width="105dp"
-        android:layout_height="83dp"
-        android:text="監控介面"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="101dp" />
 
     <Button
         android:id="@+id/search"
@@ -37,4 +37,4 @@
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="260dp" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
