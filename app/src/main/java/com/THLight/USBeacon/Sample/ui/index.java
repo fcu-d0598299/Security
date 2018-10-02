@@ -45,7 +45,7 @@ public class index extends Activity{
         protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.index);
-
+/*
         Button supervise = (Button)findViewById(R.id.supervise);
         supervise.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,10 +54,10 @@ public class index extends Activity{
                 intent.setClass(index.this , Supervise.class);
                 startActivity(intent);
             }
-        });
+        });*/ //須新增監控介面
 
         Button search = (Button)findViewById(R.id.search);
-        supervise.setOnClickListener(new View.OnClickListener() {
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();

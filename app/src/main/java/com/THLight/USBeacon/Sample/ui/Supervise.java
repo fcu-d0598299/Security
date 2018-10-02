@@ -1,4 +1,4 @@
-package com.THLight.USBeacon.Sample.ui;
+/*package com.THLight.USBeacon.Sample.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,3 +34,4 @@ public class Supervise extends Activity {
 
     };
 }
+*/ // 監控介面 需新增監控介面之xml
