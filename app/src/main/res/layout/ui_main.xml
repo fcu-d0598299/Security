@@ -25,7 +25,7 @@
         android:dividerHeight="2dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:srollbars="horizontal|vertical">
+        android:scrollbars="horizontal|vertical">
 
     </ListView>
 

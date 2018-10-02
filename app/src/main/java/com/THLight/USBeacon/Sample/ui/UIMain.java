@@ -54,8 +54,6 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	
 	final int MSG_SCAN_IBEACON			= 1000;
 	final int MSG_UPDATE_BEACON_LIST	= 1001;
-	final int MSG_START_SCAN_BEACON		= 2000;
-	final int MSG_STOP_SCAN_BEACON		= 2001;
 	final int MSG_SERVER_RESPONSE		= 3000;
 	
 	final int TIME_BEACON_TIMEOUT		= 30000;
@@ -72,7 +70,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	
 	/** USBeacon server. Connect to the Server.*/
 	USBeaconConnection mBServer	= new USBeaconConnection();
-	
+
 	USBeaconList mUSBList		= null;
 	
 	ListView mLVBLE= null;
@@ -492,23 +490,15 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 class ListItem
 {
 	public String text1= "";
-	public String text2= "";
-	public String text3= "";
-	public String text4= "";
 	public String text5= "";
-	public String text6= "";
 	String tV_mac = null;
 	public String text7= "";
 
 	
-	public ListItem(String text1, String text2, String text3, String text4, String text5, String text6 ,String tV_mac,String text7)
+	public ListItem(String toUpperCase, String text51, String tVMac, String s, String text1, String text5, String tV_mac, String text7)
 	{
 		this.text1= text1;
-		this.text2= text2;
-		this.text3= text3;
-		this.text4= text4;
 		this.text5= text5;
-		this.text6= text6;
 		this.tV_mac = tV_mac;
 		this.text7= text7;
 	}
@@ -565,22 +555,14 @@ class BLEListAdapter extends BaseAdapter
 	    if((!mListItems.isEmpty()) && mListItems.size() > position)
 	    {
 		    TextView text1	= (TextView)view.findViewById(R.id.it3_text1);
-		    TextView text2	= (TextView)view.findViewById(R.id.it3_text2);
-		    TextView text3	= (TextView)view.findViewById(R.id.it3_text3);
-		    TextView text4	= (TextView)view.findViewById(R.id.it3_text4);
 		    TextView text5	= (TextView)view.findViewById(R.id.it3_text5);
-			TextView text6	= (TextView)view.findViewById(R.id.it3_text6);
             TextView tV_Mac	= (TextView)view.findViewById(R.id.tV_mac);
 			TextView text7	= (TextView)view.findViewById(R.id.it3_text7);
 
 	    	ListItem item= (ListItem)mListItems.toArray()[position];
 
 			text1.setText(item.text1);
-			text2.setText(item.text2);
-			text3.setText(item.text3);
-			text4.setText(item.text4+ " dbm");
 			text5.setText(item.text5+ " V");
-			text6.setText(item.text6+ "dbm");
 			tV_Mac.setText(item.tV_mac);
 			text7.setText(item.text7+ "m");
 		}
