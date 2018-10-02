@@ -473,7 +473,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			//Add beacon to the list that it could show on the screen.
 			for(ScanediBeacon beacon : miBeacons)
 			{
-				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.batteryPower, ""+beacon.oneMeterRssi, beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
+				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.beaconUuid, ""+beacon.batteryPower, ""+beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
 			}
 		}
 	}
