@@ -489,7 +489,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 /** ============================================================== */
 class ListItem
 {
-	public String text1= "";
+	public String it3_text1= "";
 	public String text5= "";
 	String tV_mac = null;
 	public String text7= "";
@@ -497,7 +497,7 @@ class ListItem
 	
 	public ListItem(String toUpperCase, String text51, String tVMac, String s, String text1, String text5, String tV_mac, String text7)
 	{
-		this.text1= text1;
+		this.it3_text1= text1;
 		this.text5= text5;
 		this.tV_mac = tV_mac;
 		this.text7= text7;
@@ -532,7 +532,7 @@ class BLEListAdapter extends BaseAdapter
 	{
 		if((!mListItems.isEmpty()) && mListItems.size() > position)
 		{
-			return ((ListItem)mListItems.toArray()[position]).text1;
+			return ((ListItem)mListItems.toArray()[position]).it3_text1;
 		}
 		
 		return null;
@@ -561,7 +561,7 @@ class BLEListAdapter extends BaseAdapter
 
 	    	ListItem item= (ListItem)mListItems.toArray()[position];
 
-			text1.setText(item.text1);
+			text1.setText(item.it3_text1);
 			text5.setText(item.text5+ " V");
 			tV_Mac.setText(item.tV_mac);
 			text7.setText(item.text7+ "m");
