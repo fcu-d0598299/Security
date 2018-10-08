@@ -31,8 +31,8 @@
 			android:id="@+id/tV"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_weight="100"
-			android:text="Mac:"
+			android:layout_weight="200"
+			android:text="名稱"
 			android:textColor="#CCFFFFFF" />
 
 		<TextView
@@ -56,7 +56,7 @@
 			android:gravity="left|center_vertical"
 			android:paddingLeft="2dp"
 			android:singleLine="true"
-			android:text="battery power : "
+			android:text="電量 : "
 			android:textColor="#CCFFFFFF" />
 
 		<TextView
@@ -75,7 +75,7 @@
 			android:gravity="center"
 			android:paddingLeft="2dp"
 			android:singleLine="true"
-			android:text="distance : "
+			android:text="距離 : "
 			android:textColor="#CCFFFFFF" />
 
 		<TextView
