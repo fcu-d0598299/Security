@@ -19,9 +19,12 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,8 +81,22 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	BLEListAdapter mListAdapter		= null;
 	
 	List<ScanediBeacon> miBeacons	= new ArrayList<ScanediBeacon>();    // a beacon list
-	
-	/** ================================================ */
+    /** ================================================ */
+    public boolean onCreatOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_settings: //點了settings
+                Log.d("item","click settings");
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    /** ================================================ */
 	Handler mHandler= new Handler()
 	{
 		@Override
@@ -254,7 +271,17 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		{
 			THLLog.d("debug", "CM null");
 		}
-		
+
+        Button signin = (Button)findViewById(R.id.signin);
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(UIMain.this , Registered.class);
+                startActivity(intent);
+            }
+        });
+
 		mHandler.sendEmptyMessageDelayed(MSG_UPDATE_BEACON_LIST, 500);
 	}
 	
@@ -477,7 +504,8 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			}
 		}
 	}
-	
+
+
 	/** ========================================================== */
 	public void cleariBeacons()
 	{
@@ -599,3 +627,5 @@ class BLEListAdapter extends BaseAdapter
 }
 
 /** ============================================================== */
+
+
