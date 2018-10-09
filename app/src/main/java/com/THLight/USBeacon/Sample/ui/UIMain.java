@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,6 +62,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	final int MSG_SERVER_RESPONSE		= 3000;
 	
 	final int TIME_BEACON_TIMEOUT		= 30000;
+
 
 	static String distance;
 
@@ -193,7 +196,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ui_main);
-		
+
 		App		= THLApp.getApp();
 		Config	= THLApp.Config;
 		
@@ -272,8 +275,8 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			THLLog.d("debug", "CM null");
 		}
 
-        Button signin = (Button)findViewById(R.id.signin);
-        signin.setOnClickListener(new View.OnClickListener() {
+        Button jumptosign = (Button)findViewById(R.id.jumptosign);
+        jumptosign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -281,6 +284,64 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
                 startActivity(intent);
             }
         });
+
+        Button signin = (Button)findViewById(R.id.signin);
+
+		final EditText name = new EditText(this);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder
+				.setTitle("請輸入註冊ID")
+				.setView(name)
+				.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i) {
+						Toast.makeText(getApplicationContext(), "你的id是" +
+
+								name.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						Editable strName;
+						strName = name.getText();
+						String Name = strName.toString();
+						Bundle bundle = new Bundle();
+
+						Intent intent = new Intent();
+
+                        intent.putExtra("Name",Name);
+						intent.setClass(UIMain.this, Registered.class);
+
+						intent.putExtras(bundle);
+						startActivity(intent);
+					}
+				});
+
+		final AlertDialog alert = builder.create();
+		signin.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				alert.show();
+			}
+		});
+
+
+		/**=傳值*/
+		{
+			mListAdapter.clear();
+
+			//Add beacon to the list that it could show on the screen.
+			for(ScanediBeacon beacon : miBeacons)
+			{
+				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.beaconUuid, ""+beacon.batteryPower, ""+beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
+
+				Bundle bundle = new Bundle();
+				Intent intent = new Intent();
+				intent.putExtra("UUID",beacon.beaconUuid);
+				intent.setClass(UIMain.this,Registered.class);
+
+				intent.putExtras(bundle);
+
+			}
+		}
+
 
 		mHandler.sendEmptyMessageDelayed(MSG_UPDATE_BEACON_LIST, 500);
 	}
