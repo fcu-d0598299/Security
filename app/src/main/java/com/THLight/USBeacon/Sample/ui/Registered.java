@@ -3,8 +3,11 @@ package com.THLight.USBeacon.Sample.ui;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import com.THLight.USBeacon.Sample.ScanediBeacon;
 
 import com.THLight.USBeacon.Sample.R;
+
+import java.util.UUID;
 
 public class Registered extends Activity {
 
@@ -15,9 +18,10 @@ public class Registered extends Activity {
         TextView showname = (TextView)findViewById(R.id.uName);
         showname.setText(Name);
 
-        String uuid = getIntent().getStringExtra("UUID");
-        TextView showuuid = (TextView)findViewById(R.id.UUID);
-        showuuid.setText(uuid);
+        Bundle bundleRegister =this.getIntent().getExtras();
+        TextView Mac_address = (TextView)findViewById(R.id.Mac_address);
+        String mac_address = bundleRegister.getString("Mac_address");
+        Mac_address.setText(mac_address);
     }
 
 }

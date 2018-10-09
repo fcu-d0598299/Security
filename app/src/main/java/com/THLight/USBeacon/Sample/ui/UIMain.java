@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -275,72 +276,13 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			THLLog.d("debug", "CM null");
 		}
 
-        Button jumptosign = (Button)findViewById(R.id.jumptosign);
-        jumptosign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(UIMain.this , Registered.class);
-                startActivity(intent);
-            }
-        });
 
-        Button signin = (Button)findViewById(R.id.signin);
 
-		final EditText name = new EditText(this);
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder
-				.setTitle("請輸入註冊ID")
-				.setView(name)
-				.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialogInterface, int i) {
-						Toast.makeText(getApplicationContext(), "你的id是" +
 
-								name.getText().toString(), Toast.LENGTH_SHORT).show();
 
-						Editable strName;
-						strName = name.getText();
-						String Name = strName.toString();
-						Bundle bundle = new Bundle();
-
-						Intent intent = new Intent();
-
-                        intent.putExtra("Name",Name);
-						intent.setClass(UIMain.this, Registered.class);
-
-						intent.putExtras(bundle);
-						startActivity(intent);
-					}
-				});
-
-		final AlertDialog alert = builder.create();
-		signin.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				alert.show();
-			}
-		});
 
 
 		/**=傳值*/
-		{
-			mListAdapter.clear();
-
-			//Add beacon to the list that it could show on the screen.
-			for(ScanediBeacon beacon : miBeacons)
-			{
-				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.beaconUuid, ""+beacon.batteryPower, ""+beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
-
-				Bundle bundle = new Bundle();
-				Intent intent = new Intent();
-				intent.putExtra("UUID",beacon.beaconUuid);
-				intent.setClass(UIMain.this,Registered.class);
-
-				intent.putExtras(bundle);
-
-			}
-		}
 
 
 		mHandler.sendEmptyMessageDelayed(MSG_UPDATE_BEACON_LIST, 500);
@@ -559,9 +501,52 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			mListAdapter.clear();
 
 			//Add beacon to the list that it could show on the screen.
-			for(ScanediBeacon beacon : miBeacons)
+			for(final ScanediBeacon beacon : miBeacons)
 			{
 				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.beaconUuid, ""+beacon.batteryPower, ""+beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
+				Button signin = (Button)findViewById(R.id.signin);
+				final EditText macaddress = new EditText(this);
+				final EditText name = new EditText(this);
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+				builder
+						.setTitle("請輸入欲註冊之Beacon Address ")
+						.setView(macaddress)
+						.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialogInterface, int i) {
+
+								Editable strAddress;
+								strAddress = macaddress.getText();
+								String Address = strAddress.toString();
+								if(Address.equals(beacon.macAddress)){
+									Toast.makeText(getApplicationContext(), "正確", Toast.LENGTH_SHORT).show();
+									/*AlertDialog.Builder builder1 = new AlertDialog.Builder();
+									builder1
+											.setTitle("請輸入欲註冊之名稱")
+											.setView(name)
+											.setPositiveButton("確定", new DialogInterface.OnClickListener(){
+												public void onClick(DialogInterface dialogInterface, int i){
+													Editable strName;
+													strName = name.getText();
+													String Name = strName.toString();
+													beacon.beaconUuid = new String(Name);
+												}
+											});*/
+								}
+								else{
+									Toast.makeText(getApplicationContext(), "錯誤", Toast.LENGTH_SHORT).show();
+								}
+							}
+						});
+
+				final AlertDialog alert = builder.create();
+				signin.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						alert.show();
+					}
+				});
 			}
 		}
 	}

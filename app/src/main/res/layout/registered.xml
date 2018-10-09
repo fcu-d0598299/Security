@@ -17,7 +17,7 @@
             android:text="此Beacon_ID" />
 
         <TextView
-            android:id="@+id/UUID"
+            android:id="@+id/Mac_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

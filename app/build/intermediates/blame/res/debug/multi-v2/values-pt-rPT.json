@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\USER\\AndroidStudioProjects\\Security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "E:\\subject\\temp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\4b639ab54b106942569df5e8a686a027\\res\\values-pt-rPT\\values.xml",
+                    "source": "C:\\Users\\煒驊\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\8d279d972dc1f622643f1b3eed7f7280\\res\\values-pt-rPT\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.0.aar\\c3816e49f41c0b97b8c729a09f889667\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "C:\\Users\\煒驊\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.0.aar\\ebd5322fa9c94b317302a02aea86f088\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\56c8241f1a837ba390440c7accc402e9\\res\\values-pt-rPT\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "245",
-                        "endColumns": "102",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "39",
-                        "startColumns": "4",
-                        "startOffsets": "4922",
-                        "endColumns": "106",
-                        "endOffsets": "5024"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\1eb29a9bb62b08f54f9ca6acdb93a021\\res\\values-pt-rPT\\values.xml",
+                    "source": "C:\\Users\\煒驊\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\f05f41e68baf080e1c6841a44dbe3a30\\res\\values-pt-rPT\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -69,6 +52,23 @@
                         "startOffsets": "2099,2206,2401,2531,2641,2868,2998,3150,3492,3739,3849,4050,4183,4401,4609,4707,4806",
                         "endColumns": "106,194,129,109,226,129,151,137,246,109,200,132,217,207,97,98,115",
                         "endOffsets": "2201,2396,2526,2636,2863,2993,3145,3283,3734,3844,4045,4178,4396,4604,4702,4801,4917"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\煒驊\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\4bf5800198f67c4a1ac6305d1bd3973a\\res\\values-pt-rPT\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "245",
+                        "endColumns": "102",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "39",
+                        "startColumns": "4",
+                        "startOffsets": "4922",
+                        "endColumns": "106",
+                        "endOffsets": "5024"
                     }
                 }
             ]
