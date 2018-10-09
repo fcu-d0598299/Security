@@ -22,7 +22,7 @@
         android:name="com.THLight.USBeacon.Sample.THLApp"
         >
         <activity
-            android:name="com.THLight.USBeacon.Sample.ui.index"
+            android:name="com.THLight.USBeacon.Sample.ui.Registered"
             >
         </activity>
 
