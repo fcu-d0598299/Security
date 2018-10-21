@@ -755,7 +755,6 @@ id showCustom
 id showHome
 id showTitle
 id signin
-id signin1
 id spacer
 id split_action_bar
 id spread
@@ -770,14 +769,18 @@ id submenuarrow
 id submit_area
 id supervise
 id tV
+id tV_condition
 id tV_mac
+id tV_rssi
 id tabMode
 id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView2
 id textView4
+id textView6
 id textview
 id time
 id title

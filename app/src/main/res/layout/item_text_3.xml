@@ -27,20 +27,35 @@
 		android:orientation="horizontal"
 		android:weightSum="720">
 
-		<TextView
-			android:id="@+id/tV"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="200"
-			android:text="名稱"
-			android:textColor="#CCFFFFFF" />
+        <TextView
+            android:id="@+id/tV"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"
+            android:text="名稱"
+            android:textColor="#CCFFFFFF" />
 
 		<TextView
 			android:id="@+id/tV_mac"
+			android:layout_width="32dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="400"
+			android:textColor="#CCFFFFFF" />
+
+		<TextView
+			android:id="@+id/textView6"
+			android:layout_width="70dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="50"
+			android:text="Rssi :"
+            android:textColor="#CCFFFFFF"/>
+
+		<TextView
+			android:id="@+id/tV_rssi"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_weight="620"
-			android:textColor="#CCFFFFFF" />
+			android:layout_weight="400"
+			android:textColor="#CCFFFFFF"/>
 	</LinearLayout>
 
 	<LinearLayout
@@ -69,7 +84,7 @@
 			android:textColor="#CCFFFFFF" />
 
 		<TextView
-			android:layout_width="20dp"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:gravity="center"
@@ -80,12 +95,27 @@
 
 		<TextView
 			android:id="@+id/it3_text7"
-			android:layout_width="40dp"
+			android:layout_width="79dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:gravity="center"
 			android:singleLine="true"
 			android:textColor="#CCFFFFFF" />
+
+		<TextView
+			android:id="@+id/textView2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="狀態 : "
+            android:textColor="#CCFFFFFF"/>
+
+        <TextView
+            android:id="@+id/tV_condition"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+			android:textColor="#CCFFFFFF"/>
 
 		<RelativeLayout
 			android:layout_width="20dp"
@@ -101,14 +131,8 @@
 				android:inputType="textPersonName"
 				android:text="名稱" />
 
-			<Button
-				android:id="@+id/signin1"
-				android:layout_width="wrap_content"
-				android:layout_height="40dp"
-				android:layout_alignParentStart="true"
-				android:layout_alignParentTop="true"
-				android:text="註冊" />
 		</RelativeLayout>
+
 	</LinearLayout>
 
 </LinearLayout>

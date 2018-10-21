@@ -64,6 +64,7 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	
 	final int TIME_BEACON_TIMEOUT		= 30000;
 
+	public String condition = "safe";
 
 	static String distance;
 
@@ -341,14 +342,6 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 
 		Toast.makeText(UIMain.this,"掃描中...",Toast.LENGTH_SHORT).show();
 
-		if(distance!="dangerous" && Math.abs(iBeacon.rssi)<=5)
-		{
-			distance="dangerous";
-
-			Intent intent = new Intent();
-			intent.setClass(UIMain.this,distanceclass.class);
-			startActivity(intent);
-		}
 
 	}
 	/** ================================================ */
@@ -503,7 +496,12 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 			//Add beacon to the list that it could show on the screen.
 			for(final ScanediBeacon beacon : miBeacons)
 			{
-				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.beaconUuid, ""+beacon.batteryPower, ""+beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi)));
+				if(beacon.rssi >= -50){
+					condition = "dangerous";
+				}
+				else
+					condition = "safe";
+				mListAdapter.addItem(new ListItem(beacon.beaconUuid.toString().toUpperCase(), ""+ beacon.major, ""+ beacon.minor, ""+ beacon.rssi,""+beacon.beaconUuid, ""+beacon.batteryPower, ""+beacon.macAddress,""+beacon.calDistance((double)beacon.oneMeterRssi,beacon.rssi), ""+condition));
 				Button signin = (Button)findViewById(R.id.signin);
 				final EditText macaddress = new EditText(this);
 				final EditText name = new EditText(this);
@@ -567,14 +565,18 @@ class ListItem
 	public String text5= "";
 	String tV_mac = null;
 	public String text7= "";
+	public String tV_rssi = "";
+	public String tV_condition = "";
 
 	
-	public ListItem(String toUpperCase, String text51, String tVMac, String s, String text1, String text5, String tV_mac, String text7)
+	public ListItem(String toUpperCase, String text51, String tVMac, String s, String text1, String text5, String tV_mac, String text7,String tV_condition)
 	{
 		this.it3_text1= text1;
 		this.text5= text5;
 		this.tV_mac = tV_mac;
+		this.tV_rssi = s;
 		this.text7= text7;
+		this.tV_condition = tV_condition;
 	}
 }
 
@@ -632,13 +634,18 @@ class BLEListAdapter extends BaseAdapter
 		    TextView text5	= (TextView)view.findViewById(R.id.it3_text5);
             TextView tV_Mac	= (TextView)view.findViewById(R.id.tV_mac);
 			TextView text7	= (TextView)view.findViewById(R.id.it3_text7);
+			TextView tV_Rssi = (TextView)view.findViewById(R.id.tV_rssi);
+			TextView tV_condition = (TextView)view.findViewById(R.id.tV_condition);
 
 	    	ListItem item= (ListItem)mListItems.toArray()[position];
 
 			text1.setText(item.it3_text1);
 			text5.setText(item.text5+ " V");
 			tV_Mac.setText(item.tV_mac);
+			tV_Rssi.setText(item.tV_rssi);
 			text7.setText(item.text7+ "m");
+			tV_condition.setText(item.tV_condition);
+
 		}
 	    else
 	    {

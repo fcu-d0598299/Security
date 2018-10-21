@@ -15,7 +15,7 @@ public class ScanediBeacon extends iBeaconData
 		newBeacon.beaconUuid	= iBeacon.beaconUuid;
 		newBeacon.major			= iBeacon.major;
 		newBeacon.minor			= iBeacon.minor;
-		newBeacon.oneMeterRssi	= 100;
+		newBeacon.oneMeterRssi	= iBeacon.oneMeterRssi;
 		newBeacon.rssi			= iBeacon.rssi;
 		newBeacon.lastUpdate	= 0;
 		newBeacon.macAddress    = iBeacon.macAddress;
