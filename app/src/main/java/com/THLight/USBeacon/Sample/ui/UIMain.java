@@ -210,6 +210,9 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		mLVBLE			= (ListView)findViewById(R.id.beacon_list);
 		mLVBLE.setAdapter(mListAdapter);
 
+
+
+
 		//Check the BT is on or off on the phone.
 		if(!mBLEAdapter.isEnabled())
 		{

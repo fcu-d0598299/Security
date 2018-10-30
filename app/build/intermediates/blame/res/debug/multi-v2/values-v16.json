@@ -4,13 +4,32 @@
             "outputFile": "E:\\Program Files\\Android\\App\\Security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.0.aar\\6903abd3af191ea4aa7f70371fb11c0f\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\9dc4199068790113a019c99f8dc41c83\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
                         "endColumns": "65",
                         "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ed16b85cb32623af078e0352e413d910\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
                     }
                 }
             ]
