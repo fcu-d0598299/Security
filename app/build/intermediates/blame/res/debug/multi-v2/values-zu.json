@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\USER\\AndroidStudioProjects\\Security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zu\\values-zu.xml",
+            "outputFile": "E:\\Program Files\\Android\\App\\Security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zu\\values-zu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\4b639ab54b106942569df5e8a686a027\\res\\values-zu\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "29",
-                        "startColumns": "4",
-                        "startOffsets": "3287",
-                        "endColumns": "190",
-                        "endOffsets": "3473"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\56c8241f1a837ba390440c7accc402e9\\res\\values-zu\\values.xml",
+                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\116374ff8961b58425b5fe5b948d326f\\res\\values-zu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\1eb29a9bb62b08f54f9ca6acdb93a021\\res\\values-zu\\values.xml",
+                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\4bc88ef68bc3d2d5341971dc43f63eb5\\res\\values-zu\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "29",
+                        "startColumns": "4",
+                        "startOffsets": "3287",
+                        "endColumns": "190",
+                        "endOffsets": "3473"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\b8b84e41b5c1e176f524db746a5edb25\\res\\values-zu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.0.aar\\c3816e49f41c0b97b8c729a09f889667\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\Dai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.0.aar\\6903abd3af191ea4aa7f70371fb11c0f\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
