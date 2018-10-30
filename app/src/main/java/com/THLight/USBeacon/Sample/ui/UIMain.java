@@ -344,6 +344,18 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		}
 
 		Toast.makeText(UIMain.this,"掃描中...",Toast.LENGTH_SHORT).show();
+		if(iBeacon.rssi >=-50 && distance!="dangerous") {
+			distance="dangerous";
+			Intent intent = new Intent();
+			intent.setClass(UIMain.this, distanceclass.class);
+			startActivity(intent);
+		}
+		else if(iBeacon.rssi < -50 && distance!="safe"){
+			distance="safe";
+			Intent intent = new Intent();
+			intent.setClass(UIMain.this, distanceclass.class);
+			startActivity(intent);
+		}
 
 
 	}
