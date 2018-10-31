@@ -25,7 +25,10 @@
             android:name="com.THLight.USBeacon.Sample.ui.Registered"
             >
         </activity>
-
+        <activity
+            android:name="com.THLight.USBeacon.Sample.ui.distanceclass"
+            >
+        </activity>
         <activity
             android:name="com.THLight.USBeacon.Sample.ui.UIMain"
             android:label="@string/app_name"
