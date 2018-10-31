@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Wed Oct 31 11:49:59 CST 2018
+0.baseType=DIRECTORY
+0.base=E\:\\112255\\Security\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+0.path=myxml.xml
+0.set=ASSET
+count=1

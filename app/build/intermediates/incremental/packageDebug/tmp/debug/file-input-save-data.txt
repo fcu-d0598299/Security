@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Wed Oct 31 13:51:53 CST 2018
+1.base=E\:\\112255\\Security\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=ASSET
+0.path=classes.dex
+0.set=DEX
+0.base=E\:\\112255\\Security\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+1.path=myxml.xml

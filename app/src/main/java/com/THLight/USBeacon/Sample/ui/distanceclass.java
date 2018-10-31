@@ -6,8 +6,10 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -23,9 +25,10 @@ public class distanceclass extends Activity {
     private int vol;
     private SoundPool sound;
 
+    boolean loaded = false;
 
     private Button alertButton;
-
+    public static MediaPlayer mediaPlayer;
 
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -34,8 +37,7 @@ public class distanceclass extends Activity {
         ImageView warnimg = (ImageView) findViewById(R.id.imageView2);
         Resources res = this.getResources();
 
-        sound = new SoundPool(10, AudioManager.STREAM_MUSIC, 5);
-        vol = sound.load(this,R.raw.test,1);
+
 
 
         if(UIMain.distance=="dangerous")
@@ -43,13 +45,22 @@ public class distanceclass extends Activity {
             Drawable drawable = res.getDrawable(R.drawable.warnimg);
             Toast.makeText(distanceclass.this,"危險",Toast.LENGTH_SHORT).show();
             warnimg.setBackground(drawable);
-            sound.autoResume();
+
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer = MediaPlayer.create(this,R.raw.test);
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            mediaPlayer.setLooping(true);
+            mediaPlayer.start();
+
         }
         else if(UIMain.distance=="safe")
         {
             Intent intent = new Intent();
             intent.setClass(distanceclass.this,UIMain.class);
             startActivity(intent);
+
+            distanceclass.mediaPlayer.stop();
+
 
         }
 
@@ -61,5 +72,30 @@ public class distanceclass extends Activity {
             }
         });
     }
+
 }
 
+/*
+    private void initializeSoundPool(){
+        sound = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        sound.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            public void onLoadComplete(SoundPool soundPool, int sampleId,
+                                       int status) {
+                loaded = true;
+            }
+        });
+        vol = sound.load(this, R.raw.test, 1);
+    }
+
+    private void playFile(){
+        AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        float actualVolume = (float) audioManager
+                .getStreamVolume(AudioManager.STREAM_MUSIC);
+        float maxVolume = (float) audioManager
+                .getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        float volume = actualVolume / maxVolume;
+        if (loaded) {
+            sound.play(vol, volume, volume, 1, 0, 1f);
+            Log.e("Test", "Played sound");
+        }
+    }*/
