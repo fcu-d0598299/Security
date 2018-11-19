@@ -13,6 +13,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -31,7 +32,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.sinch.android.rtc.Sinch;
+import com.sinch.android.rtc.SinchClient;
+import com.sinch.android.rtc.calling.Call;
+import com.sinch.android.rtc.calling.CallClient;
+import com.sinch.android.rtc.calling.CallClientListener;
 import com.THLight.USBeacon.App.Lib.BatteryPowerData;
 import com.THLight.USBeacon.App.Lib.USBeaconConnection;
 import com.THLight.USBeacon.App.Lib.USBeaconData;
@@ -65,8 +70,9 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 	final int TIME_BEACON_TIMEOUT		= 30000;
 
 	public String condition = "safe";
+    private SinchClient sinchClient;
 
-	static String distance;
+	static String distance = "safe";
 
 	THLApp App		= null;
 	THLConfig Config= null;
@@ -199,6 +205,22 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ui_main);
 
+        sinchClient = Sinch.getSinchClientBuilder()
+                .context(this)
+                .userId("test")
+                .applicationKey("ce688317-4457-4900-9439-ea7c49855b70")
+                .applicationSecret("/eGTzSt9pEOeMnVL0HR77A==")
+                .environmentHost("clientapi.sinch.com")
+                .build();
+        sinchClient.setSupportCalling(true);
+        sinchClient.startListeningOnActiveConnection();
+        sinchClient.start();
+        sinchClient.getCallClient().addCallClientListener(new SinchCallClientListener());
+
+		AudioManager audioManager =  (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+		audioManager.setMode(AudioManager.MODE_IN_CALL);
+		audioManager.setSpeakerphoneOn(true);
+
 		App		= THLApp.getApp();
 		Config	= THLApp.Config;
 		
@@ -291,8 +313,20 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 
 		mHandler.sendEmptyMessageDelayed(MSG_UPDATE_BEACON_LIST, 500);
 	}
-	
+    /** ================================================ */
+    private class SinchCallClientListener implements CallClientListener {
+        @Override
+        public void onIncomingCall(CallClient callClient, Call incomingCall) {
+            incomingCall.answer();
+        }
+    }
 	/** ================================================ */
+    protected void onDestroy() {
+        super.onDestroy();
+        sinchClient.stopListeningOnActiveConnection();
+        sinchClient.terminate();
+    }
+    /** ================================================ */
 	@Override
 	public void onResume()
 	{
@@ -336,7 +370,8 @@ public class UIMain extends Activity implements iBeaconScanManager.OniBeaconScan
 
     /** ================================================ */
 	@Override
-	public void onScaned(iBeaconData iBeacon)
+
+    public void onScaned(iBeaconData iBeacon)
 	{
 		synchronized(mListAdapter)
 		{
@@ -692,7 +727,10 @@ class BLEListAdapter extends BaseAdapter
 	{
 		mListItems.clear();
 	}
+    /** ================================================ */
+
 }
+
 
 /** ============================================================== */
 
